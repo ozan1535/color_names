@@ -21,7 +21,19 @@ function App() {
       className="App"
       style={{ background: `rgb(${color.r},${color.g},${color.b})` }}
     >
-      <RgbColorPicker color={color} onChange={setColor} />
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <RgbColorPicker color={color} onChange={setColor} />
+        <div
+          style={{
+            paddingLeft: "5px",
+            color: canChangeColor ? "currentcolor" : "white ",
+          }}
+        >
+          <p>R: {color.r}</p>
+          <p>G: {color.g}</p>
+          <p>B: {color.b}</p>
+        </div>
+      </div>
       <h3 style={{ color: canChangeColor ? "currentcolor" : "white " }}>
         Color Name: {colorName}
       </h3>
